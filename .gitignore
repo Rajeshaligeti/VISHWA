@@ -49,3 +49,6 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+# Vercel local project settings
+.vercel/
