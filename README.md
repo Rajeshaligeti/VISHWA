@@ -1,4 +1,4 @@
-# Vishva Astro Core 🚀
+# Vishwa Astra 🪐
 
 > A cutting-edge space exploration and astronomy web application featuring interactive knowledge hubs, simulations, and AI-powered assistance.
 
@@ -163,23 +163,16 @@ This project uses:
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Gadicherla Abhilash 
+2. Gudivada Sumana
+3. Akshitha Ganji
+4. Addagarla Mahesh Kumar
+5. Aligeti Rajesh
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Issues](../../issues) page for existing solutions
-2. Create a new issue with detailed information
-3. Join our community discussions
 
 ## 🌟 Acknowledgments
 
@@ -189,4 +182,3 @@ If you encounter any issues or have questions:
 
 ---
 
-**Ready to explore the cosmos? 🌌 [Deploy now](https://vercel.com/new) and start your space journey!**
