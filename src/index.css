@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Futuristic Space Biology Engine Design System 
+All colors MUST be HSL for proper theme support.
+Deep space colors: dark blues, purples, blacks with neon cyan and magenta highlights.
+*/
+
+@layer base {
+  :root {
+    /* Deep Space Background System */
+    --background: 226 100% 3%;  /* Deep space black-blue */
+    --foreground: 180 100% 95%; /* Bright cyan-white */
+
+    /* Holographic Panel System */
+    --card: 235 60% 8%;         /* Dark blue-purple cards */
+    --card-foreground: 180 100% 90%;
+
+    --popover: 235 80% 6%;      /* Darker panels */
+    --popover-foreground: 180 100% 95%;
+
+    /* Neon Accent System */
+    --primary: 180 100% 50%;    /* Bright cyan */
+    --primary-foreground: 226 100% 3%;
+
+    --secondary: 280 100% 50%;  /* Neon magenta */
+    --secondary-foreground: 226 100% 3%;
+
+    /* Muted Space Elements */
+    --muted: 235 40% 15%;       /* Subtle space gray */
+    --muted-foreground: 180 50% 70%;
+
+    /* Interactive Accents */
+    --accent: 200 100% 60%;     /* Electric blue */
+    --accent-foreground: 226 100% 3%;
+
+    /* Alert Systems */
+    --destructive: 0 100% 60%;  /* Warning red */
+    --destructive-foreground: 0 0% 100%;
+
+    /* UI Elements */
+    --border: 235 50% 20%;      /* Subtle borders */
+    --input: 235 60% 12%;       /* Input backgrounds */
+    --ring: 180 100% 50%;       /* Focus rings */
+
+    --radius: 0.75rem;
+
+    /* Custom Space Theme Variables */
+    --space-deep: 226 100% 2%;     /* Deepest space */
+    --space-purple: 260 80% 20%;   /* Nebula purple */
+    --space-blue: 220 100% 15%;    /* Deep space blue */
+    
+    --neon-cyan: 180 100% 50%;     /* Primary neon */
+    --neon-magenta: 300 100% 60%;  /* Secondary neon */
+    --neon-electric: 200 100% 65%; /* Electric blue */
+    --neon-green: 140 100% 50%;    /* Matrix green */
+    
+    /* Holographic Effects */
+    --holo-base: 235 80% 8%;       /* Base hologram */
+    --holo-border: 180 100% 30%;   /* Hologram borders */
+    --holo-glow: 180 100% 50%;     /* Hologram glow */
+    
+    /* Gradients */
+    --gradient-space: linear-gradient(135deg, hsl(var(--space-deep)), hsl(var(--space-blue)));
+    --gradient-nebula: linear-gradient(45deg, hsl(var(--space-purple)), hsl(var(--space-blue)));
+    --gradient-neon: linear-gradient(90deg, hsl(var(--neon-cyan)), hsl(var(--neon-magenta)));
+    --gradient-holo: linear-gradient(135deg, hsl(var(--holo-base) / 0.3), hsl(var(--holo-base) / 0.1));
+    
+    /* Shadows & Glows */
+    --shadow-neon: 0 0 20px hsl(var(--neon-cyan) / 0.5);
+    --shadow-magenta: 0 0 20px hsl(var(--neon-magenta) / 0.5);
+    --shadow-holo: 0 8px 32px hsl(var(--holo-glow) / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: all 0.2s ease-out;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Orbitron', 'Exo 2', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Starfield Animation */
+  .starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: var(--gradient-space);
+    overflow: hidden;
+  }
+  
+  .starfield::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300%;
+    height: 300%;
+    background-image: 
+      radial-gradient(2px 2px at 20px 30px, hsl(var(--neon-cyan)), transparent),
+      radial-gradient(2px 2px at 40px 70px, hsl(var(--neon-magenta)), transparent),
+      radial-gradient(1px 1px at 90px 40px, hsl(var(--foreground)), transparent),
+      radial-gradient(1px 1px at 130px 80px, hsl(var(--neon-electric)), transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: float 20s infinite linear;
+  }
+
+  /* Holographic Panel Base */
+  .holo-panel {
+    background: var(--gradient-holo);
+    border: 1px solid hsl(var(--holo-border));
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-holo);
+    transition: var(--transition-smooth);
+  }
+  
+  .holo-panel:hover {
+    border-color: hsl(var(--neon-cyan));
+    box-shadow: var(--shadow-neon);
+  }
+
+  /* Neon Glow Effects */
+  .neon-glow {
+    box-shadow: var(--shadow-neon);
+    border: 1px solid hsl(var(--neon-cyan) / 0.3);
+    transition: var(--transition-glow);
+  }
+  
+  .neon-glow:hover {
+    box-shadow: var(--shadow-neon), var(--shadow-magenta);
+    border-color: hsl(var(--neon-cyan));
+    transform: translateY(-2px);
+  }
+
+  /* Floating Animation */
+  .floating {
+    animation: floating 6s ease-in-out infinite;
+  }
+  
+  .floating-delayed {
+    animation: floating 6s ease-in-out infinite;
+    animation-delay: -2s;
+  }
+
+  /* DNA Helix Animation */
+  .dna-strand {
+    animation: dna-spin 10s linear infinite;
+  }
+
+  /* Pulse Animation for Orbs */
+  .pulse-orb {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  /* Particle System */
+  .particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--neon-cyan));
+    border-radius: 50%;
+    animation: particle-float 15s infinite linear;
+  }
+
+  /* Parallax Scrolling Effect */
+  .parallax-section {
+    transform-style: preserve-3d;
+  }
+  
+  .parallax-section > * {
+    transform: translateZ(0);
+  }
+}
+
+@layer utilities {
+  /* Gradient Text Effects */
+  .text-gradient-neon {
+    background: var(--gradient-neon);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .text-gradient-space {
+    background: var(--gradient-nebula);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hover Scale Effect */
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Interactive Glow */
+  .interactive-glow {
+    transition: var(--transition-glow);
+    cursor: pointer;
+  }
+  
+  .interactive-glow:hover {
+    box-shadow: var(--shadow-neon);
+    transform: translateY(-1px);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-200px, -200px); }
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes dna-spin {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: var(--shadow-neon);
+    opacity: 0.8;
+  }
+  50% { 
+    box-shadow: var(--shadow-neon), var(--shadow-magenta);
+    opacity: 1;
+  }
+}
+
+@keyframes particle-float {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) translateX(100px);
+    opacity: 0;
+  }
+}
+
+/* Import Orbitron font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Exo+2:wght@300;400;500;600;700&display=swap');
