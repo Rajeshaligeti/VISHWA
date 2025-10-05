@@ -12,6 +12,33 @@ dist
 dist-ssr
 *.local
 
+# Vite cache
+.vite/
+
+# Build output
+build/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Supabase temp
+supabase/.temp/
+
+# Coverage
+coverage/
+
+# Lockfiles
+bun.lockb
+
+# Archives
+*.tgz
+*.zip
+
+# OS junk already partly listed
+Thumbs.db
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

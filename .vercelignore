@@ -1,0 +1,15 @@
+# Ignore non-essential files for deployment
+.vscode/
+.idea/
+.git/
+.gitignore
+README.md
+**/node_modules/
+**/coverage/
+**/*.log
+
+# Source maps if you don't want to upload them (optional)
+*.map
+
+# Supabase local temp
+supabase/.temp/
