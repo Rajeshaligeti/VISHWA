@@ -23,25 +23,26 @@ build/
 .env.*
 !.env.example
 
-# Supabase temp
+# Supabase configuration and temp files
 supabase/.temp/
+supabase/config.toml
+supabase/.branches/
+supabase/.migration_cache/
 
 # Coverage
 coverage/
 
-# Lockfiles
+# Lockfiles (using bun, not npm)
 bun.lockb
-
-# Archives
-*.tgz
-*.zip
-
-# OS junk already partly listed
-Thumbs.db
+package-lock.json
+yarn.lock
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
 .idea
 .DS_Store
 *.suo
@@ -49,6 +50,18 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+# OS generated files
+Thumbs.db
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Temporary files
+*.tmp
+*.temp
 
 # Vercel local project settings
 .vercel/
