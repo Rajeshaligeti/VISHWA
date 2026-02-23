@@ -22,7 +22,7 @@
 
 ```bash
 # Clone the repository
-git clone <YOUR_GIT_URL>
+git clone <https://github.com/Rajeshaligeti/VISHWA/>
 
 # Navigate to project directory
 cd vishva-astro-core-main
